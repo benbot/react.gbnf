@@ -1,0 +1,21 @@
+root ::= (think act observe)* (think final)
+
+think ::= "Thought: " thought "\n"
+
+act ::= (
+    "Action: " action "\n"
+    "Action Input: " action-input "\n"
+)
+
+observe ::= "Observation: Ben is a programmer who like playing with AI\n"
+
+final ::= (
+  "Final Answer: " final-answer "\n"
+)
+
+thought ::= str
+action ::= str
+action-input ::= str
+observation ::= str
+final-answer ::= str
+str ::= [0-9A-Za-z., ]+
