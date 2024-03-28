@@ -15,8 +15,6 @@ from langchain.agents import create_react_agent, AgentExecutor
 
 grammar_path = "/path/to/react.gbnf"
 
-prompt = hub.pull("hwchase17/react")
-
 llm = LlamaCpp(grammar_path=grammar_path, model_path="/path/to/model.gguf")
 
 tools = [WikipediaQueryRun(api_wrapper=WikipediaAPIWrapper())]
@@ -24,7 +22,7 @@ agent = create_react_agent(llm, tools, prompt)
 
 executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
 
-resp = executor.invoke({"input": "What is a platypus?"})
+resp = executor.invoke({"input": "Who invented donuts?"})
 print(resp)
 ```
 
